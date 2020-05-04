@@ -1,22 +1,22 @@
-package com.example.demo.web;
+package com.example.demo.test.web;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.domain.Message;
+import com.example.demo.test.domain.Message;
 
 @RestController
 public class TestController {
     
-    @RequestMapping("/")
+    @GetMapping("/")
     public String root_test() throws Exception{
         return "Hello Root(/)";
     }
  
-    @RequestMapping("/demo")
+    @GetMapping("/demo")
     public String demo_test() throws Exception{
         return "Hello demo(/demo)";
     }
