@@ -6,13 +6,13 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel
 public class User {
 	
-	@ApiModelProperty(value = "¾Æ¾Æµğ",   required = true)
+	@ApiModelProperty(value = "ì•„ì´ë””",   required = true)
 	private String id;
 
-	@ApiModelProperty(value = "ºñ¹Ğ¹øÈ£", required = true)
+	@ApiModelProperty(value = "íŒ¨ìŠ¤ì›Œë“œ", required = true)
 	private String pw;
 	
-	@ApiModelProperty(value = "³ªÀÌ", 	required = true)
+	@ApiModelProperty(value = "ë‚˜ì´", 	required = true)
 	private int age;
 
 	public String getId() {

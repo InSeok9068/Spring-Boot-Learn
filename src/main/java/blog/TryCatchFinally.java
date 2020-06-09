@@ -9,13 +9,13 @@ public class TryCatchFinally {
 //		FileOutputStream out = null;
 //		try {
 //			out = new FileOutputStream("test.txt"); 
-//			// ÀÔÃâ·Â ·ÎÁ÷ ±¸Çö 
+//			// ì…ì¶œë ¥ ë¡œì§ êµ¬í˜„ 
 //		} catch (FileNotFoundException e) {
 //			e.printStackTrace(); 
 //		} finally {
 //			if(out != null) {  
 //				try { 
-//					out.close(); //close ÇÏ´Ù°¡ ¿¹¿Ü°¡ ¹ß»ıÇÒ ¼ö ÀÖ´Ù. 
+//					out.close(); //close í•˜ë‹¤ê°€ ì˜ˆì™¸ê°€ ë°œìƒí•  ìˆ˜ ìˆë‹¤. 
 //				} catch (IOException e) {
 //					e.printStackTrace(); 
 //				} 
@@ -23,7 +23,7 @@ public class TryCatchFinally {
 //		}
 		
 		try(FileOutputStream out = new FileOutputStream("test.txt")) {
-			//ÀÔÃâ·Â ·ÎÁ÷ ±¸Çö 
+			//ì…ì¶œë ¥ ë¡œì§ êµ¬í˜„ 
 		}catch(IOException e){
 			e.printStackTrace(); 
 		}

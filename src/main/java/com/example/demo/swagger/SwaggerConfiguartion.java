@@ -19,21 +19,21 @@ public class SwaggerConfiguartion {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
             .select()
-//            .apis(RequestHandlerSelectors.any()) // ¸ğµç RequestMapping URI ÃßÃâ
-            .apis(RequestHandlerSelectors.basePackage("com.example.demo")) // ÆĞÅ°Áö ±âÁØ ÃßÃâ
-            .paths(PathSelectors.any()) // °æ·Î ÆĞÅÏ URI¸¸ ÃßÃâ
-//            .paths(PathSelectors.ant("/v2/**")) // °æ·Î ÆĞÅÏ URI¸¸ ÃßÃâ
+//            .apis(RequestHandlerSelectors.any()) // ëª¨ë“  RequestMapping URI ì¶”ì¶œ
+            .apis(RequestHandlerSelectors.basePackage("com.example.demo")) // íŒ¨í‚¤ì§€ ê¸°ì¤€ ì¶”ì¶œ
+            .paths(PathSelectors.any()) // ê²½ë¡œ íŒ¨í„´ URIë§Œ ì¶”ì¶œ
+//            .paths(PathSelectors.ant("/v2/**")) // ê²½ë¡œ íŒ¨í„´ URIë§Œ ì¶”ì¶œ
             .build()
             .apiInfo(apiInfo())
-            .useDefaultResponseMessages(false); // Response ÀÀ´ä ¸Ş½ÃÁö µğÆúÆ®°ª Àû¿ë X
+            .useDefaultResponseMessages(false); // Response ì‘ë‹µ ë©”ì‹œì§€ ë””í´íŠ¸ê°’ ì ìš© X
     }
 
     private ApiInfo apiInfo() {
     	return new ApiInfoBuilder()
     			.title("REST API")
-    			.description("½ºÇÁ¸µºÎÆ® »ùÇÃ ÇÁ·ÎÁ§Æ®")
+    			.description("ìŠ¤í”„ë§ë¶€íŠ¸ ìƒ˜í”Œ í”„ë¡œì íŠ¸")
     			.version("v1")
-    			.termsOfServiceUrl("¼­ºñ½º ¾à°ü URL")
+    			.termsOfServiceUrl("ì„œë¹„ìŠ¤ ì•½ê´€ URL")
     			.contact("dlstjr9068@gmail.com")
     			.license("License")
     			.licenseUrl("localhost:8080")
@@ -41,9 +41,9 @@ public class SwaggerConfiguartion {
     	
 //      return new ApiInfo(
 //      "REST API", 					//title
-//      "½ºÇÁ¸µºÎÆ® »ùÇÃ ÇÁ·ÎÁ§Æ®", 			//description
+//      "ìŠ¤í”„ë§ë¶€íŠ¸ ìƒ˜í”Œ í”„ë¡œì íŠ¸", 			//description
 //      "v1", 							//version
-//      "¼­ºñ½º ¾à°ü URL", 					//termsOfServiceUrl
+//      "ì„œë¹„ìŠ¤ ì•½ê´€ URL", 					//termsOfServiceUrl
 //      "dlstjr9068@gmail.com", 		//contactName
 //      "License", 						//license
 //      "localhost:8080"); 				//licenseUrl    	

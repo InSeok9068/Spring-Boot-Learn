@@ -26,10 +26,10 @@ public class TestController {
     public String pushMessage(@RequestBody Message msg) throws Exception{
 
 	    if(msg.getMemo() != null || msg.getMemo().equals("")) {
-	    	throw new Exception("¸Þ¸ð¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+	    	throw new Exception("ë©”ëª¨ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 	    }
 	    
-	    return "¼º°ø";
+	    return "ì„±ê³µ";
 	}
  
 }

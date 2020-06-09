@@ -1,3 +1,4 @@
+
 package com.example.demo.swagger.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,23 +19,23 @@ import io.swagger.annotations.ApiResponses;
 // https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Annotations#quick-annotation-overview
 
 @RestController
-@Api(tags = {"1. Swagger Test"})	// Swagger ÃÖ»ó´Ü Controller ¸íÄª
-//@ApiIgnore // Á¦¿ÜÃ³¸®
+@Api(tags = {"1. Swagger Test"})	// Swagger ìµœìƒë‹¨ Controller ëª…ì¹­
+//@ApiIgnore // ì œì™¸ì²˜ë¦¬
 public class SwaggerController {
 
-	@ApiOperation(value = "Get Åë½Å", notes = "Get Åë½Å Note", response = BaseGenericRes.class )	// value: ÇØ´ç ÆÄ¶ó¹ÌÅÍ ¸íÄª, notes : ¸Ş¼Òµå¿¡ ´ëÇÑ ¼³¸í¶õ
+	@ApiOperation(value = "Get í†µì‹ ", notes = "Get í†µì‹  Note", response = BaseGenericRes.class )	// value: í•´ë‹¹ íŒŒë¼ë¯¸í„° ëª…ì¹­, notes : ë©”ì†Œë“œì— ëŒ€í•œ ì„¤ëª…ë€
 //	@ApiImplicitParams({
-//		@ApiImplicitParam(name="param1", value="ÆÄ¶ó¹ÌÅÍ 1", required=true, dataType="string"),
-//		@ApiImplicitParam(name="param2", value="ÆÄ¶ó¹ÌÅÍ 2", required=true, dataType="string")
+//		@ApiImplicitParam(name="param1", value="íŒŒë¼ë¯¸í„° 1", required=true, dataType="string"),
+//		@ApiImplicitParam(name="param2", value="íŒŒë¼ë¯¸í„° 2", required=true, dataType="string")
 //	})
 	@ApiResponses(value = {
-			@ApiResponse(code = 404, message = "ÆäÀÌÁö ¾øÀ½"),
-			@ApiResponse(code = 500, message = "¼­¹ö ¿¡·¯")
+			@ApiResponse(code = 404, message = "í˜ì´ì§€ ì—†ìŒ"),
+			@ApiResponse(code = 500, message = "ì„œë²„ ì—ëŸ¬")
 	})
 	@GetMapping(value = "/swagger", produces = "application/json")
 	public BaseGenericRes<String> GetRestApi(
-			@ApiParam(value = "ÆÄ¶ó¹ÌÅÍ 1", required = true) @RequestParam(required = true, defaultValue = " ")  String param1,
-			@ApiParam(value = "ÆÄ¶ó¹ÌÅÍ 2", required = true) @RequestParam(required = true, defaultValue = "0")  int    param2
+			@ApiParam(value = "íŒŒë¼ë¯¸í„° 1", required = true) @RequestParam(required = true, defaultValue = " ")  String param1,
+			@ApiParam(value = "íŒŒë¼ë¯¸í„° 2", required = true) @RequestParam(required = true, defaultValue = "0")  int    param2
 			) {
 		
 		BaseGenericRes<String> result = new BaseGenericRes<String>();
@@ -42,10 +43,10 @@ public class SwaggerController {
 		return result;
 	}
 	
-	@ApiOperation(value = "Post Åë½Å", notes = "Post Åë½Å Note", response = BaseGenericRes.class )	// value: ÇØ´ç ÆÄ¶ó¹ÌÅÍ ¸íÄª, notes : ¸Ş¼Òµå¿¡ ´ëÇÑ ¼³¸í¶õ
+	@ApiOperation(value = "Post í†µì‹ ", notes = "Post í†µì‹  Note", response = BaseGenericRes.class )	// value: í•´ë‹¹ íŒŒë¼ë¯¸í„° ëª…ì¹­, notes : ë©”ì†Œë“œì— ëŒ€í•œ ì„¤ëª…ë€
 	@ApiResponses(value = {
-			@ApiResponse(code = 404, message = "ÆäÀÌÁö ¾øÀ½"),
-			@ApiResponse(code = 500, message = "¼­¹ö ¿¡·¯")
+			@ApiResponse(code = 404, message = "í˜ì´ì§€ ì—†ìŒ"),
+			@ApiResponse(code = 500, message = "ì„œë²„ ì—ëŸ¬")
 	})
 	@PostMapping(value = "/swagger", produces = "application/json")
 	public BaseGenericRes<String> PostRestApi(@RequestBody User user 

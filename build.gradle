@@ -28,12 +28,12 @@ ext {
 }
 
 dependencies {
-	//implementation 'org.springframework.boot:spring-boot-starter-batch'
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	
 	/*--------------------------[ Swagger 2 ]--------------------------------*/ 
-	// Swagger2 ³»ºÎ ¶óÀÌºê·¯¸® ÀÌ½´·Î ÀÎÇÑ Annotatios°ú Models °ú°Å ¹öÀüÀ¸·Î »ç¿ë
+	// Swagger2 ë‚´ë¶€ ë¼ì´ë¸ŒëŸ¬ë¦¬ ì´ìŠˆë¡œ ì¸í•œ Annotatiosê³¼ Models ê³¼ê±° ë²„ì „ìœ¼ë¡œ ì‚¬ìš©
 	//implementation 'io.springfox:springfox-swagger2:2.9.2'
 	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 	
@@ -57,7 +57,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	//testImplementation 'org.springframework.batch:spring-batch-test'
+	testImplementation 'org.springframework.batch:spring-batch-test'
 	//testImplementation 'org.springframework.security:spring-security-test'
 }
 
