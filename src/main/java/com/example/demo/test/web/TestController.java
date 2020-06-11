@@ -1,6 +1,5 @@
 package com.example.demo.test.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,11 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.test.domain.Message;
 import com.example.demo.test.mapper.MessageMapper;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @RestController
 public class TestController {
 	
-	@Autowired
-	MessageMapper messageMapper;
+	private final MessageMapper messageMapper;
     
     @GetMapping("/")
     public String root_test() throws Exception{

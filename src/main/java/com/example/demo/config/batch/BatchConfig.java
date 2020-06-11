@@ -1,9 +1,9 @@
-package com.example.demo.batchConfig;
+package com.example.demo.config.batch;
 
 //@Slf4j // log 사용을 위한 lombok 어노테이션
 //@RequiredArgsConstructor // 생성자 DI를 위한 lombok 어노테이션
 //@Configuration
-//public class BatchConfiguration {
+//public class BatchConfig {
 //    private final JobBuilderFactory jobBuilderFactory; // 생성자 DI 받음
 //    private final StepBuilderFactory stepBuilderFactory; // 생성자 DI 받음
 //
