@@ -1,5 +1,6 @@
 package com.example.demo.test.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,9 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.test.domain.Message;
+import com.example.demo.test.mapper.MessageMapper;
 
 @RestController
 public class TestController {
+	
+	@Autowired
+	MessageMapper messageMapper;
     
     @GetMapping("/")
     public String root_test() throws Exception{
@@ -19,6 +24,11 @@ public class TestController {
     @GetMapping("/demo")
     public String demo_test() throws Exception{
         return "Hello demo(/demo)";
+    }
+    
+    @GetMapping("/message")
+    public String getMessage() throws Exception {
+    	return String.valueOf(messageMapper.selectMessage().get("MSG"));
     }
     
     @PostMapping("/message")
