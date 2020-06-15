@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.config.properties.Config;
 import com.example.demo.test.domain.Message;
 import com.example.demo.test.mapper.MessageMapper;
 
@@ -16,9 +17,12 @@ import lombok.RequiredArgsConstructor;
 public class TestController {
 	
 	private final MessageMapper messageMapper;
+	
+	private final Config config;
     
     @GetMapping("/")
     public String root_test() throws Exception{
+    	System.out.println(config);
         return "Hello Root(/)";
     }
  
