@@ -9,12 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.config.properties.Config;
 import com.example.demo.test.domain.Message;
 import com.example.demo.test.mapper.MessageMapper;
+import com.example.demo.test.service.EmpService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 public class TestController {
+	
+	private final EmpService empService;
 	
 	private final MessageMapper messageMapper;
 	
@@ -47,5 +52,41 @@ public class TestController {
 	    return "성공";
 	    
 	}
+    
+    @GetMapping("/emp")
+    public Object getEmp() throws Exception {
+    	return empService.getEmp();
+    }
+    
+    @GetMapping("/emp/cache")
+    public Object getEmpForCache() throws Exception {
+    	
+        long start = System.currentTimeMillis(); // 수행시간 측정
+        Object result = empService.getEmpForCache(); // db 조회
+        long end = System.currentTimeMillis();
+
+        log.info("Cache 수행시간 : "+ Long.toString(end-start));
+        
+    	return result;
+    }
+    
+    @GetMapping("/emp/nocache")
+    public Object getEmpForNoCache() throws Exception {
+    	
+        long start = System.currentTimeMillis(); // 수행시간 측정
+        Object result = empService.getEmpForNoCache(); // db 조회
+        long end = System.currentTimeMillis();
+
+        log.info("NoCache 수행시간 : "+ Long.toString(end-start));
+        
+    	return result;
+    }
+    
+    @GetMapping("/emp/cacheClear")
+    @ResponseBody
+    public String clearEmpCache(){
+    	empService.clearEmpCache(); // 캐시제거
+        return "cache clear!";
+    }
  
 }
