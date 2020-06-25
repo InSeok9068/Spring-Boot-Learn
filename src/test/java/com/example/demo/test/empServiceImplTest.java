@@ -6,6 +6,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.ResultActions;
 
 import com.example.demo.common.IntegrationTest;
@@ -18,7 +19,7 @@ public class empServiceImplTest extends IntegrationTest {
     }
 	
     @Test
-    public void 사원조회() throws Exception {
+    public void 사원조회Mock() throws Exception {
         //given
 
         //when
@@ -28,5 +29,16 @@ public class empServiceImplTest extends IntegrationTest {
         resultActions
                 .andExpect(status().isOk());
         ;
+    }
+    
+    @Test
+    public void 사원조회Rest() throws Exception {
+        //given
+
+        //when
+        ResponseEntity<Object> response = restTemplate.getForEntity("/emp", Object.class);
+
+        //then
+        System.out.println("결과 : "+response.getBody().toString());
     }
 }

@@ -24,15 +24,10 @@ public class TestController {
 	private final MessageMapper messageMapper;
 	
 	private final Config config;
-    
-    @GetMapping("/")
-    public String root_test() throws Exception{
-    	System.out.println(config);
-        return "Hello Root(/)";
-    }
  
-    @GetMapping("/demo")
+    @GetMapping("/config")
     public String demo_test() throws Exception{
+    	System.out.println(config);
         return "Hello demo(/demo)";
     }
     
