@@ -1,4 +1,4 @@
-package com.example.demo.test.web;
+package com.example.demo.app.blog.test.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.app.blog.test.domain.Message;
+import com.example.demo.app.blog.test.mapper.MessageMapper;
+import com.example.demo.app.blog.test.service.EmpService;
 import com.example.demo.config.properties.Config;
-import com.example.demo.test.domain.Message;
-import com.example.demo.test.mapper.MessageMapper;
-import com.example.demo.test.service.EmpService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

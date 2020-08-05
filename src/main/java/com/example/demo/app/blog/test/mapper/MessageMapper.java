@@ -1,4 +1,4 @@
-package com.example.demo.test.mapper;
+package com.example.demo.app.blog.test.mapper;
 
 import java.util.Map;
 

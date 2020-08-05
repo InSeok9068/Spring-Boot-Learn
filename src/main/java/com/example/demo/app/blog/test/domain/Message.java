@@ -1,4 +1,4 @@
-package com.example.demo.test.domain;
+package com.example.demo.app.blog.test.domain;
 
 import javax.validation.constraints.NotNull;
 
