@@ -1,9 +1,10 @@
 package com.example.demo.app.blog.test.domain;
 
-import javax.validation.constraints.NotNull;
 
 import lombok.Builder;
 import lombok.Getter;
+
+import javax.validation.constraints.NotNull;
 
 @Builder
 @Getter
