@@ -25,22 +25,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 //		        .excludePathPatterns("/login") 제외할 URL
 		WebMvcConfigurer.super.addInterceptors(registry);
 	}
-	
-    @Bean
-    public TilesConfigurer tilesConfigurer() {
-        TilesConfigurer configurer = new TilesConfigurer();
-        configurer.setDefinitions(new String[]{"/WEB-INF/tiles/tiles.xml"});
-        configurer.setCheckRefresh(true);
-        return configurer;
-    }
-    
-    @Bean
-    public TilesViewResolver tilesViewResolver() {
-        final TilesViewResolver tilesViewResolver = new TilesViewResolver();
-        tilesViewResolver.setViewClass(TilesView.class);
-        tilesViewResolver.setOrder(1);  //뷰 우선순위
-        return tilesViewResolver;
-    }
 
     @Bean
     public FilterRegistrationBean<CustomFilter> getBeanCustamFilter(){

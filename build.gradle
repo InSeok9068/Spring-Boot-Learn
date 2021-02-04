@@ -33,23 +33,27 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	
-	/*--------------------------[ Swagger 2 ]--------------------------------*/ 
-	// Swagger2 내부 라이브러리 이슈로 인한 Annotatios과 Models 과거 버전으로 사용
-	//implementation 'io.springfox:springfox-swagger2:2.9.2'
-	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
-	
-	implementation("io.springfox:springfox-swagger2:${swagger2Version}") {
-		exclude group: 'io.swagger',module: 'swagger-annotations' 
-		exclude group: 'io.swagger',module: 'swagger-models' 
-	} 
-	
-	implementation "io.swagger:swagger-annotations:${oldSwagger2Version}" 
-	implementation "io.swagger:swagger-models:${oldSwagger2Version}"
+
+	/*--------------------------[ Thymeleaf ]---------------------------------*/
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	/*-----------------------------------------------------------------------*/
 
 	/*--------------------------[ Undertow ]---------------------------------*/ 	
 	implementation 'org.springframework.boot:spring-boot-starter-undertow'
+	/*-----------------------------------------------------------------------*/
+
+	/*--------------------------[ Swagger 2 ]--------------------------------*/
+	// Swagger2 내부 라이브러리 이슈로 인한 Annotatios과 Models 과거 버전으로 사용
+	//implementation 'io.springfox:springfox-swagger2:2.9.2'
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+
+	implementation("io.springfox:springfox-swagger2:${swagger2Version}") {
+		exclude group: 'io.swagger',module: 'swagger-annotations'
+		exclude group: 'io.swagger',module: 'swagger-models'
+	}
+
+	implementation "io.swagger:swagger-annotations:${oldSwagger2Version}"
+	implementation "io.swagger:swagger-models:${oldSwagger2Version}"
 	/*-----------------------------------------------------------------------*/
 	
 	/*--------------------------[ My Batis ]---------------------------------*/ 	
@@ -64,18 +68,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
     implementation 'net.sf.ehcache:ehcache-core:2.6.11'
 	/*-----------------------------------------------------------------------*/
-	
-	/*--------------------------[ Actuator 설정 ]------------------------------*/
-	// 알수없는 오류로 실행 불가
-	//implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	/*-----------------------------------------------------------------------*/
-	
-	/*--------------------------[ JSP 설정 및 Tiles 설정 ]-----------------------*/
-	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-	implementation 'javax.servlet:jstl'
-	implementation 'org.apache.tiles:tiles-jsp:3.0.8'
-	/*-----------------------------------------------------------------------*/
-	
+
 	/*--------------------------[ GSON 설정 ]---------------------------------*/
 	implementation 'com.google.code.gson:gson:2.8.5'
 	/*-----------------------------------------------------------------------*/
