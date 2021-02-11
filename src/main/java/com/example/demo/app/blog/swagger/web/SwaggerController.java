@@ -1,5 +1,5 @@
 
-package com.example.demo.swagger.controller;
+package com.example.demo.app.blog.swagger.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.common.domain.BaseGenericRes;
-import com.example.demo.swagger.domain.User;
+import com.example.demo.app.blog.swagger.domain.User;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

@@ -80,7 +80,12 @@ dependencies {
 	/*--------------------------[ Quartz 설정 ]--------------------------------*/
 	implementation 'org.springframework.boot:spring-boot-starter-quartz'
 	/*-----------------------------------------------------------------------*/
-	
+
+	/*--------------------------[ commons-text ]------------------------------*/
+	implementation 'org.apache.commons:commons-text:1.9'
+	/*-----------------------------------------------------------------------*/
+
+
 	implementation 'org.apache.httpcomponents:httpclient:4.5.12'
 	
 	runtimeOnly 'com.h2database:h2'
