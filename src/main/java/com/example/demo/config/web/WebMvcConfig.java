@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -36,22 +37,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return registrationBean;
     }
 
-	@Override
-	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-		converters.add(htmlEscapingConveter());
-	}
-
-	private HttpMessageConverter<?> htmlEscapingConveter() {
+	@Bean
+	public MappingJackson2HttpMessageConverter jsonEscapeConverter() {
 		ObjectMapper objectMapper = new ObjectMapper();
-		// 3. ObjectMapper에 특수 문자 처리 기능 적용
 		objectMapper.getFactory().setCharacterEscapes(new HTMLCharacterEscapes());
-
-		// 4. MessageConverter에 ObjectMapper 설정
-		MappingJackson2HttpMessageConverter htmlEscapingConverter =
-				new MappingJackson2HttpMessageConverter();
-		htmlEscapingConverter.setObjectMapper(objectMapper);
-
-		return htmlEscapingConverter;
+		return new MappingJackson2HttpMessageConverter(objectMapper);
 	}
     
 }

@@ -1,19 +1,21 @@
 package com.example.demo.app.blog.xss;
 
-import com.google.gson.JsonObject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class XssController {
 
     @GetMapping(value = "/responseXss")
-    JsonObject responseXss(){
-        JsonObject resultJson = new JsonObject();
+    Map<String, Object> responseXss(){
+        Map<String, Object> resultMap = new HashMap<>();
 
-        resultJson.addProperty("htmlTdTag", "<td></td>");
-        resultJson.addProperty("htmlTableTag", "<table>");
+        resultMap.put("htmlTdTag", "<td></td>");
+        resultMap.put("htmlTableTag", "<table>");
 
-        return resultJson;
+        return resultMap;
     }
 }
