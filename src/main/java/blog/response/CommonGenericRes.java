@@ -1,11 +1,11 @@
-package com.example.demo.common.domain;
+package blog.response;
 
 import lombok.Data;
 
 @Data
-public class BaseGenericRes<T> {
+public class CommonGenericRes<T> {
 	private int resCode;
-	
+
 	private String resMsg;
 	
 	private T resObj;
