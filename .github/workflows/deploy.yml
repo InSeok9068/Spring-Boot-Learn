@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: "build/libs/*.jar"
+          source: "Spring-Boot-Learn-0.0.1-SNAPSHOT.jar"
           target: "deploy"
             
       - name: Send Deploy success
