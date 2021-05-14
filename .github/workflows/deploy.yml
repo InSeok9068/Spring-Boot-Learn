@@ -42,3 +42,9 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             mkdir test        
+      - name: Send Deploy success
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: ${{ github.actor }} 님 배포 완료하였습니다.
