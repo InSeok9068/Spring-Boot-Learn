@@ -53,6 +53,16 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           source: "build/libs/Spring-Boot-Learn-0.0.1-SNAPSHOT.jar"
           target: "deploy"
+          
+      - name: SSH Action Server Start
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            java -jar /home/ubuntu/deploy/build/libs/Spring-Boot-Learn-0.0.1-SNAPSHOT.jar        
             
       - name: Send Deploy success
         uses: appleboy/telegram-action@master
