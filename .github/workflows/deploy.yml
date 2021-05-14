@@ -33,7 +33,7 @@ jobs:
         run: ./gradlew build
         shell: bash
         
-      - name: Deploy
+      - name: SSH Action
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -41,8 +41,18 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            rm -rf test
-            mkdir test        
+            rm -rf deploy
+            mkdir deploy
+
+      - name: SCP Action
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "build/libs/*.jar"
+          target: "deploy"
             
       - name: Send Deploy success
         uses: appleboy/telegram-action@master
