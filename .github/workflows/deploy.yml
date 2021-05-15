@@ -63,7 +63,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            sh deploy_start.sh
+            sh deploy_start.sh &
             
       - name: Send Deploy success
         uses: appleboy/telegram-action@master
