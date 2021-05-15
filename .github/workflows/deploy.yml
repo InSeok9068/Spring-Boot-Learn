@@ -43,7 +43,6 @@ jobs:
           script: |
             rm -rf deploy
             mkdir deploy
-            ps -ef | grep Spring-Boot-Learn-0.0.1-SNAPSHOT.jar | awk '{print $2}' | xargs kill -9
 
       - name: SCP Action
         uses: appleboy/scp-action@master
