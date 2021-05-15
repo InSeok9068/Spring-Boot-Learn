@@ -43,6 +43,7 @@ jobs:
           script: |
             rm -rf deploy
             mkdir deploy
+            sh deploy.sh
 
       - name: SCP Action
         uses: appleboy/scp-action@master
@@ -62,7 +63,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            sh /home/ubuntu/deploy_start.sh
+            sh deploy_start.sh
             
       - name: Send Deploy success
         uses: appleboy/telegram-action@master
