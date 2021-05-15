@@ -64,7 +64,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo systemctl start web-service.service
-
+            
       - name: Send Deploy success
         uses: appleboy/telegram-action@master
         with:
